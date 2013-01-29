@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<Schema>
+  <Namespace ID="Anito.Test.Schema.BusinessObjects" Assembly="Anito.Test.Schema">
+    <DataObject Type="Entity" View="Entity" Update="Entity">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="EntityCode" IsPrimaryKey="true" Property="EntityCode" Storage="_EntityCode" Size="50" />
+        <DataField Name="Identifier" Property="Identifier" Storage="_Identifier" />
+        <DataField Name="Name" Property="Name" Storage="_Name" Size="250" />
+        <DataField Name="EmailAddress" Property="EmailAddress" Storage="_EmailAddress" Size="250" />
+        <DataField Name="Type" Property="Type" Storage="_Type" Size="60" />
+        <DataField Name="ContactNo" Property="ContactNo" Storage="_ContactNo" Size="50" />
+        <DataField Name="FaxNo" Property="FaxNo" Storage="_FaxNo" Size="50" />
+        <DataField Name="Address" Property="Address" Storage="_Address" Size="250" />
+        <DataField Name="City" Property="City" Storage="_City" Size="250" />
+        <DataField Name="State" Property="State" Storage="_State" Size="250" />
+        <DataField Name="PostalCode" Property="PostalCode" Storage="_PostalCode" Size="50" />
+        <DataField Name="Country" Property="Country" Storage="_Country" Size="250" />
+        <DataField Name="Currency" Property="Currency" Storage="_Currency" Size="50" />
+        <DataField Name="ProfileCode" Property="ProfileCode" Storage="_ProfileCode" Size="30" />
+        <DataField Name="Balance" Property="Balance" Storage="_Balance" />
+        <DataField Name="BalanceRate" Property="BalanceRate" Storage="_BalanceRate" />
+        <DataField Name="DateRegistered" Property="DateRegistered" Storage="_DateRegistered" />
+        <DataField Name="IsActive" Property="IsActive" Storage="_IsActive" />
+      </Fields>
+      <Associations>
+        <Association Relation="OneToOne" Storage="_Profile">
+          <Reference SourceKey="ProfileCode" ReferenceKey="ProfileCode" />
+        </Association>
+        <Association Relation="OneToMany" Storage="_SalesOrder">
+          <Reference SourceKey="EntityCode" ReferenceKey="EntityCode" />
+          <Reference SourceKey="Balance" ReferenceKey="Balance" />
+        </Association>
+      </Associations>
+    </DataObject>
+    <DataObject Type="SalesOrder" View="SalesOrder" Update="SalesOrder">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="SalesOrderCode" IsPrimaryKey="true" Property="SalesOrderCode" Storage="_SalesOrderCode" Size="50" />
+        <DataField Name="EntityCode" Property="EntityCode" Storage="_EntityCode" Size="30" />
+        <DataField Name="OrderDate" Property="OrderDate" Storage="_OrderDate" />
+        <DataField Name="CouponCode" Property="CouponCode" Storage="_CouponCode" Size="50" />
+        <DataField Name="TaxCode" Property="TaxCode" Storage="_TaxCode" Size="50" />
+        <DataField Name="Currency" Property="Currency" Storage="_Currency" Size="30" />
+        <DataField Name="Total" Property="Total" Storage="_Total" />
+        <DataField Name="TotalRate" Property="TotalRate" Storage="_TotalRate" />
+        <DataField Name="Discount" Property="Discount" Storage="_Discount" />
+        <DataField Name="DiscountRate" Property="DiscountRate" Storage="_DiscountRate" />
+        <DataField Name="Tax" Property="Tax" Storage="_Tax" />
+        <DataField Name="TaxRate" Property="TaxRate" Storage="_TaxRate" />
+        <DataField Name="ExtendedTotal" Property="ExtendedTotal" Storage="_ExtendedTotal" />
+        <DataField Name="ExtendedTotalRate" Property="ExtendedTotalRate" Storage="_ExtendedTotalRate" />
+        <DataField Name="Paid" Property="Paid" Storage="_Paid" />
+        <DataField Name="PaidRate" Property="PaidRate" Storage="_PaidRate" />
+        <DataField Name="Balance" Property="Balance" Storage="_Balance" />
+        <DataField Name="BalanceRate" Property="BalanceRate" Storage="_BalanceRate" />
+        <DataField Name="Status" Property="Status" Storage="_Status" Size="60" />
+      </Fields>
+      <Associations>
+        <Association Relation="OneToMany" Storage="_SalesOrderDetail" Hierarchy="Parent">
+          <Reference SourceKey="SalesOrderCode" ReferenceKey="SalesOrderCode" />
+        </Association>
+        <Association Relation="OneToOne" Storage="_Customer">
+          <Reference SourceKey="EntityCode" ReferenceKey="EntityCode" />
+        </Association>
+      </Associations>
+    </DataObject>
+    <DataObject Type="SalesOrderDetail" View="SalesOrderDetail" Update="SalesOrderDetail">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="SalesOrderCode" IsPrimaryKey="true" Property="SalesOrderCode" Storage="_SalesOrderCode" Size="50" />
+        <DataField Name="LineNum" Property="LineNum" Storage="_LineNum" />
+        <DataField Name="ItemCode" Property="ItemCode" Storage="_ItemCode" Size="50" />
+        <DataField Name="QuantityOrdered" Property="QuantityOrdered" Storage="_QuantityOrdered" />
+        <DataField Name="QuantityInvoiced" Property="QuantityInvoiced" Storage="_QuantityInvoiced" />
+        <DataField Name="ActualPrice" Property="ActualPrice" Storage="_ActualPrice" />
+        <DataField Name="ActualPriceRate" Property="ActualPriceRate" Storage="_ActualPriceRate" />
+        <DataField Name="Discount" Property="Discount" Storage="_Discount" />
+        <DataField Name="DiscountRate" Property="DiscountRate" Storage="_DiscountRate" />
+        <DataField Name="Tax" Property="Tax" Storage="_Tax" />
+        <DataField Name="TaxRate" Property="TaxRate" Storage="_TaxRate" />
+        <DataField Name="ExtendedPrice" Property="ExtendedPrice" Storage="_ExtendedPrice" />
+        <DataField Name="ExtendedPriceRate" Property="ExtendedPriceRate" Storage="_ExtendedPriceRate" />
+        <DataField Name="Total" Property="Total" Storage="_Total" />
+        <DataField Name="TotalRate" Property="TotalRate" Storage="_TotalRate" />
+        <DataField Name="ExtendedTotal" Property="ExtendedTotal" Storage="_ExtendedTotal" />
+        <DataField Name="ExtendedTotalRate" Property="ExtendedTotalRate" Storage="_ExtendedTotalRate" />
+      </Fields>
+      <Associations>
+        <Association Relation="OneToOne" Storage="_Item">
+          <Reference SourceKey="ItemCode" ReferenceKey="ItemCode" />
+        </Association>
+      </Associations>
+    </DataObject>
+    <DataObject Type="Profile" View="Profile" Update="Profile">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="ProfileCode" IsPrimaryKey="true" Property="ProfileCode" Storage="_ProfileCode" Size="30" />
+        <DataField Name="ProfileName" Property="ProfileName" Storage="_ProfileName" Size="250" />
+        <DataField Name="AddressCode" Property="AddressCode" Storage="_AddressCode" Size="30" />
+      </Fields>
+      <Associations>
+        <Association Relation="OneToOne" Storage="_Address">
+          <Reference SourceKey="AddressCode" ReferenceKey="AddressCode" />
+        </Association>
+      </Associations>
+    </DataObject>
+    <DataObject Type="Address" View="Address" Update="Address">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="AddressCode" IsPrimaryKey="true" Property="AddressCode" Storage="_AddressCode" Size="30" />
+        <DataField Name="Country" Property="Country" Storage="_Country" Size="250" />
+        <DataField Name="State" Property="State" Storage="_State" Size="250" />
+        <DataField Name="PostalCode" Property="PostalCode" Storage="_PostalCode" Size="30" />
+        <DataField Name="Address" Property="Address1" Storage="_Address" Size="250" />
+        <DataField Name="Address2" Property="Address2" Storage="_Address2" Size="250" />
+      </Fields>
+      <Associations />
+    </DataObject>
+    <DataObject Type="Item" View="Item" Update="Item">
+      <Fields>
+        <DataField Name="ID" IsIdentity="true" Property="ID" Storage="_ID" />
+        <DataField Name="ItemCode" IsPrimaryKey="true" Property="ItemCode" Storage="_ItemCode" Size="30" />
+        <DataField Name="DisplayCode" Property="DisplayCode" Storage="_DisplayCode" Size="60" />
+        <DataField Name="ItemName" Property="ItemName" Storage="_ItemName" Size="60" />
+        <DataField Name="Description" Property="Description" Storage="_Description" Size="250" />
+        <DataField Name="Type" Property="Type" Storage="_Type" Size="60" />
+        <DataField Name="Price" Property="Price" Storage="_Price" />
+        <DataField Name="PriceRate" Property="PriceRate" Storage="_PriceRate" />
+      </Fields>
+      <Associations />
+    </DataObject>
+  </Namespace>
+</Schema>

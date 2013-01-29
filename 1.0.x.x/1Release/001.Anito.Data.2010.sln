@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anito.Data", "..\Anito.Data\Anito.Data.csproj", "{07023B06-1BBD-45C6-BD01-AECEB7C85CFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anito.Data.SqlClient", "..\Anito.Data.SqlClient\Anito.Data.SqlClient.csproj", "{98B3F008-4CD8-4AB6-B968-718C35BE1A05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anito.Data.MySqlClient", "..\Anito.Data.MySqlClient\Anito.Data.MySqlClient.csproj", "{D443D8ED-9DAB-4CCD-9133-F526576F6EF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anito.Data.SqliteClient", "..\Anito.Data.SqliteClient\Anito.Data.SqliteClient.csproj", "{524901AB-92E6-4AA3-830F-BEE0DB88D501}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{92932110-28AC-4935-99A7-F8EAFF58B0F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{FCD0B5A6-8B2D-4168-B4BD-C0EF229C4F98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07023B06-1BBD-45C6-BD01-AECEB7C85CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07023B06-1BBD-45C6-BD01-AECEB7C85CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07023B06-1BBD-45C6-BD01-AECEB7C85CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07023B06-1BBD-45C6-BD01-AECEB7C85CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B3F008-4CD8-4AB6-B968-718C35BE1A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B3F008-4CD8-4AB6-B968-718C35BE1A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B3F008-4CD8-4AB6-B968-718C35BE1A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B3F008-4CD8-4AB6-B968-718C35BE1A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D443D8ED-9DAB-4CCD-9133-F526576F6EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D443D8ED-9DAB-4CCD-9133-F526576F6EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D443D8ED-9DAB-4CCD-9133-F526576F6EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D443D8ED-9DAB-4CCD-9133-F526576F6EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524901AB-92E6-4AA3-830F-BEE0DB88D501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524901AB-92E6-4AA3-830F-BEE0DB88D501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524901AB-92E6-4AA3-830F-BEE0DB88D501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524901AB-92E6-4AA3-830F-BEE0DB88D501}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07023B06-1BBD-45C6-BD01-AECEB7C85CFA} = {92932110-28AC-4935-99A7-F8EAFF58B0F4}
+		{D443D8ED-9DAB-4CCD-9133-F526576F6EF4} = {FCD0B5A6-8B2D-4168-B4BD-C0EF229C4F98}
+		{98B3F008-4CD8-4AB6-B968-718C35BE1A05} = {FCD0B5A6-8B2D-4168-B4BD-C0EF229C4F98}
+		{524901AB-92E6-4AA3-830F-BEE0DB88D501} = {FCD0B5A6-8B2D-4168-B4BD-C0EF229C4F98}
+	EndGlobalSection
+EndGlobal

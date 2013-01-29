@@ -1,0 +1,52 @@
+Contents
+1. Source Folder Structure
+2. Running the source
+
+
+
+1. Source Folder Structure
+------------------------------------------------------------------------
+1Release                 - contains the solution configured for Release
+1Solution                - contains the solution configured for Debug
+Anito.Data               - project folder for anito.nets base structure
+Anito.Data.MySqlClient   - project folder for anitos MySql provider
+Anito.Data.SqlClient     - project folder for anitos Ms-Sql provider
+Anito.Data.SqliteClient  - project folder for anitos SQLite provider
+Anito.Test.Forms         - project folder for windows forms testing
+Anito.Test.Schema        - test schema project folder
+bin                      - build output folder
+  Debug                  - debug build output folder
+  Release                - release build output folder
+Database                 - database samples for different providers
+Documents                - anito project documents
+Third Party              - third party projects and assemblies
+
+
+
+
+
+2. Running the source
+------------------------------------------------------------------------
+
+2.1 Solution files
+
+  All projects are binded into a single solution files in 2 configurations.
+  
+  The Debug configuration solution file is located in the 1Solution folder, 
+filename: "Anito.Data.sln". 
+
+  While the solution file for Release configuration is located in the
+1Release folder, filename: "Anito.Data.sln".
+
+
+2.2 Database
+
+  Copies for demo databases are located at the Database folder.  
+Restore a copy of the demo database depending on your selected provider.
+
+2.3 Connection Configuration
+
+  Modify anito.config file, under the project Anito.Test.Schema.
+Provide your connection string and in "appSettings" provide a value for
+"AnitoDefaultConnection".  The value should be the name of your connection
+string. 
